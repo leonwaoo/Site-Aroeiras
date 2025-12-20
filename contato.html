@@ -37,23 +37,23 @@
   <main class="main-content">
     <div class="container">
       <h2>Fale Conosco</h2>
-      <p style="max-width: 600px; margin: 0 auto 30px;">
-        Envie a sua mensagem ou utilize os nossos canais de comunicação direta para orçamentos e parcerias.
+      <p style="max-width: 600px; margin: 0 auto 30px; text-align: center;">
+        Envie sua dúvida ou solicite um orçamento personalizado para parcerias e grandes encomendas.
       </p>
       
       <div class="contato-form">
         <form action="https://formspree.io/f/mvzpzqjl" method="POST">
-          <input type="text" name="nome" placeholder="Seu nome" required />
-          <input type="email" name="_replyto" placeholder="Seu e-mail" required />
-          <textarea name="mensagem" placeholder="Sua mensagem" rows="6" required></textarea>
+          <input type="text" name="nome" placeholder="Nome completo" required />
+          <input type="email" name="email" placeholder="E-mail de contato" required />
+          <textarea name="mensagem" placeholder="Como podemos ajudar você?" rows="5" required></textarea>
           
-          <input type="hidden" name="_subject" value="Nova mensagem de contato do Site Aroeiras">
+          <input type="hidden" name="_subject" value="Nova mensagem de contato - Site Aroeiras">
           
-          <button type="submit">Enviar Mensagem</button>
+          <button type="submit">Enviar agora</button>
         </form>
       </div>
       
-      <h3 style="text-align: center; margin-top: 50px; font-family: 'Julius Sans One';">Nossas Redes Sociais</h3>
+      <h3 style="text-align: center; margin-top: 50px; font-family: 'Julius Sans One'; color: var(--color-olive);">Nossas Redes Sociais</h3>
       <div class="social-links">
         <a href="https://www.instagram.com/aroeiras_/" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://wa.me/553497337768" target="_blank" rel="noopener noreferrer">WhatsApp</a>
@@ -70,6 +70,7 @@
   </footer>
 
   <script>
+    // Funcionalidade do Menu Hambúrguer para dispositivos móveis
     document.querySelector('.menu-toggle').addEventListener('click', () => {
       document.querySelector('.menu-principal').classList.toggle('active');
     });
