@@ -39,7 +39,9 @@
         
         <div class="grid-produtos">
             <div class="card-produto">
-                <img src="img/ecobag.JPG" alt="Ecobag Aroeiras">
+                <div class="img-zoom-container">
+                    <img src="img/ecobag.JPG" alt="Ecobag Aroeiras" class="img-zoomable">
+                </div>
                 <div class="detalhes-tecnicos">
                     <h3>Ecobag</h3>
                     <ul>
@@ -53,7 +55,9 @@
             </div>
 
             <div class="card-produto">
-                <img src="img/shoulder bag.JPG" alt="Shoulder Bag Aroeiras">
+                <div class="img-zoom-container">
+                    <img src="img/shoulder bag.JPG" alt="Shoulder Bag Aroeiras" class="img-zoomable">
+                </div>
                 <div class="detalhes-tecnicos">
                     <h3>Shoulder Bag</h3>
                     <ul>
@@ -67,7 +71,9 @@
             </div>
 
             <div class="card-produto">
-                <img src="img/necessarie.JPG" alt="Necessaire Aroeiras">
+                <div class="img-zoom-container">
+                    <img src="img/necessarie.JPG" alt="Necessaire Aroeiras" class="img-zoomable">
+                </div>
                 <div class="detalhes-tecnicos">
                     <h3>Necessaire</h3>
                     <ul>
@@ -83,12 +89,12 @@
 
         <h2>Galeria da Marca</h2>
         <div class="galeria-fotos">
-            <img src="img/mulheres costurando.JPG" alt="Mulheres costurando">
-            <img src="img/foto com as mulheres.JPG" alt="Equipe Aroeiras">
-            <img src="img/oficina de costura.JPG" alt="Oficina de costura">
-            <img src="img/foto praiana.JPG" alt="Uso das ecobags em ambiente externo">
-            <img src="img/detalhes.JPG" alt="Detalhes do acabamento">
-            <img src="img/necessarie2.JPG" alt="Outras variações de necessaire">
+            <div class="img-zoom-container"><img src="img/mulheres costurando.JPG" alt="Mulheres costurando" class="img-zoomable"></div>
+            <div class="img-zoom-container"><img src="img/foto com as mulheres.JPG" alt="Equipe Aroeiras" class="img-zoomable"></div>
+            <div class="img-zoom-container"><img src="img/oficina de costura.JPG" alt="Oficina de costura" class="img-zoomable"></div>
+            <div class="img-zoom-container"><img src="img/foto praiana.JPG" alt="Uso das ecobags em ambiente externo" class="img-zoomable"></div>
+            <div class="img-zoom-container"><img src="img/detalhes.JPG" alt="Detalhes do acabamento" class="img-zoomable"></div>
+            <div class="img-zoom-container"><img src="img/necessarie2.JPG" alt="Outras variações de necessaire" class="img-zoomable"></div>
         </div>
         
         <div class="contato-produtos" style="text-align: center; margin-top: 40px;">
@@ -116,8 +122,30 @@
   </footer>
 
   <script>
+    // Menu toggle
     document.querySelector('.menu-toggle').addEventListener('click', () => {
       document.querySelector('.menu-principal').classList.toggle('active');
+    });
+
+    // Função de Zoom suave seguindo o cursor
+    const zoomContainers = document.querySelectorAll('.img-zoom-container');
+
+    zoomContainers.forEach(container => {
+        const img = container.querySelector('img');
+
+        container.addEventListener('mousemove', (e) => {
+            const { left, top, width, height } = container.getBoundingClientRect();
+            const x = ((e.pageX - left - window.scrollX) / width) * 100;
+            const y = ((e.pageY - top - window.scrollY) / height) * 100;
+
+            img.style.transformOrigin = `${x}% ${y}%`;
+            img.style.transform = "scale(2)";
+        });
+
+        container.addEventListener('mouseleave', () => {
+            img.style.transform = "scale(1)";
+            img.style.transformOrigin = "center center";
+        });
     });
   </script>
 </body>
