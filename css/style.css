@@ -258,19 +258,19 @@ p {
   margin-bottom: 25px;
 }
 
-/* --- NÚMEROS --- */
+/* --- NÚMEROS (Atualizado com fundo e padding) --- */
 .numeros-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   margin-top: 20px;
-  padding: 25px;
-  background-color: var(--color-light-brown); 
+  padding: 40px 20px; /* Aumentado para criar a moldura ao redor dos blocos */
+  background-color: var(--color-light-brown); /* Cor de fundo da moldura principal */
   border-radius: 12px;
 }
 
 .numero-item {
-  background-color: var(--color-beige); 
+  background-color: var(--color-beige); /* Cor de fundo interna dos blocos */
   padding: 30px 15px;
   border-radius: 8px;
   text-align: center;
