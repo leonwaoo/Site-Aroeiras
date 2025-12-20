@@ -10,6 +10,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Estilos específicos para a sobreposição do vídeo */
+    .video-container {
+      position: relative;
+      max-width: 900px;
+      margin: 50px auto;
+      cursor: pointer;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* Escurece levemente a imagem de capa */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      transition: opacity 0.5s;
+    }
+
+    .video-overlay img {
+      width: 120px; /* Tamanho da logo sobre o vídeo */
+      margin-bottom: 20px;
+      filter: brightness(0) invert(1); /* Torna a logo branca se necessário */
+    }
+
+    .play-button {
+      background: var(--color-terracotta, #a65d47);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Esconde a sobreposição quando o vídeo começa */
+    .video-container.playing .video-overlay {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -39,14 +88,18 @@
     <div class="container">
       <h2 style="margin-top: 20px;">Tecendo Histórias, <br>Transformando Vidas.</h2>
       
-      <p class="destaque" style="border-left: none; padding-left: 0; text-align: center; max-width: 750px; margin: 0 auto 40px;">
+      <p class="destaque" style="text-align: center; max-width: 750px; margin: 0 auto 40px;">
         Negócio de impacto socioambiental em Uberlândia que transforma retalhos em moda sustentável através das mãos de mulheres incríveis.
       </p>
 
-      <div class="video-container" style="max-width: 900px; margin: 50px auto;">
-          <h3 style="text-align: center; margin-bottom: 25px;">Conheça o nosso propósito</h3>
+      <div class="video-container" id="videoContainer" onclick="playVideo()">
+          <div class="video-overlay" id="videoOverlay">
+              <img src="img/logo.JPG" alt="Logo Aroeiras">
+              <div class="play-button">Conheça nossa história</div>
+          </div>
+          
           <div class="video-wrapper">
-              <video width="100%" height="auto" controls poster="img/foto com as mulheres.JPG">
+              <video id="meuVideo" width="100%" height="auto" poster="img/foto com as mulheres.JPG">
                   <source src="video/apresentacao.mp4" type="video/mp4">
                   Seu navegador não suporta a tag de vídeo.
               </video>
@@ -59,7 +112,7 @@
 
       <div class="botoes-compra">
           <a href="produtos.html" class="btn-shopee">Ver Coleção de Produtos</a>
-          <a href="sobre.html" class="btn-whatsapp" style="background-color: var(--color-terracotta); border-color: var(--color-terracotta);">Nossa História Completa</a>
+          <a href="sobre.html" class="btn-whatsapp" style="background-color: #a65d47; border-color: #a65d47;">Nossa História Completa</a>
       </div>
     </div>
   </main>
@@ -71,9 +124,22 @@
   </footer>
 
   <script>
+    // Menu mobile
     document.querySelector('.menu-toggle').addEventListener('click', () => {
       document.querySelector('.menu-principal').classList.toggle('active');
     });
+
+    // Função para dar play e esconder a logo
+    function playVideo() {
+      const video = document.getElementById('meuVideo');
+      const container = document.getElementById('videoContainer');
+      
+      if (video.paused) {
+        video.play();
+        video.controls = true; // Mostra os controlos após o play
+        container.classList.add('playing');
+      }
+    }
   </script>
 
 </body>
