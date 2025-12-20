@@ -173,7 +173,7 @@ p {
   transform: translateY(-3px);
 }
 
-/* BOTÕES DE COMPRA (WhatsApp e Shopee) */
+/* BOTÕES DE COMPRA */
 .btn-whatsapp, .btn-shopee {
   display: inline-block;
   font-family: 'Julius Sans One', sans-serif;
@@ -261,7 +261,7 @@ p {
 /* --- NÚMEROS (Fileira Única) --- */
 .numeros-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Força 4 colunas em uma fileira */
+  grid-template-columns: repeat(4, 1fr);
   gap: 15px;
   margin-top: 20px;
   padding: 30px 15px;
@@ -282,7 +282,7 @@ p {
 }
 
 .numero-item strong {
-  font-size: 2em;
+  font-size: 2.2em;
   color: var(--color-bright-red); 
   line-height: 1;
 }
@@ -292,36 +292,22 @@ p {
   font-weight: 600;
 }
 
-/* --- ODS (Fileira Única) --- */
+/* --- ODS (Apenas imagens em fileira única) --- */
 .ods-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* Força 6 colunas em uma fileira */
+  grid-template-columns: repeat(6, 1fr);
   gap: 15px;
   margin-top: 40px;
   text-align: center;
-  align-items: start;
-}
-
-.ods-item {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 10px;
 }
 
 .ods-item img {
   width: 100%;
-  max-width: 100px; /* Tamanho controlado para caber na fileira */
+  max-width: 120px;
   height: auto;
   object-fit: contain;
-}
-
-.ods-item span {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.75em;
-  font-weight: 600;
-  color: var(--color-olive);
-  line-height: 1.2;
+  margin: 0 auto;
 }
 
 /* --- GRADES DE PRODUTOS E FOTOS --- */
@@ -431,9 +417,8 @@ p {
   
   .logo-img { height: 50px; } 
 
-  /* Ajuste responsivo para fileiras em telas menores */
   .numeros-grid { grid-template-columns: repeat(2, 1fr); }
-  .ods-grid { grid-template-columns: repeat(3, 1fr); }
+  .ods-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
 }
 
 @media (max-width: 480px) {
