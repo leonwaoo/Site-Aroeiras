@@ -12,12 +12,15 @@
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
-    /* Estilos específicos para a sobreposição do vídeo */
+    /* Estilos para a sobreposição do vídeo */
     .video-container {
       position: relative;
       max-width: 900px;
-      margin: 50px auto;
+      margin: 40px auto;
       cursor: pointer;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     }
 
     .video-overlay {
@@ -26,37 +29,63 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.4); /* Escurece levemente a imagem de capa */
+      background: rgba(0, 0, 0, 0.45);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       z-index: 2;
-      transition: opacity 0.5s;
+      transition: opacity 0.5s ease;
     }
 
-    .video-overlay img {
-      width: 120px; /* Tamanho da logo sobre o vídeo */
+    .video-overlay img.logo-sobre {
+      width: 100px;
       margin-bottom: 20px;
-      filter: brightness(0) invert(1); /* Torna a logo branca se necessário */
+      border-radius: 50%;
     }
 
-    .play-button {
+    .play-icon {
+      width: 60px;
+      height: 60px;
       background: var(--color-terracotta, #a65d47);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+      transition: transform 0.3s;
+    }
+
+    .play-icon::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 15px 0 15px 25px;
+      border-color: transparent transparent transparent white;
+      margin-left: 5px;
+    }
+
+    .video-overlay span {
       color: white;
-      padding: 12px 25px;
-      border-radius: 30px;
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      letter-spacing: 2px;
+      font-size: 0.9rem;
     }
 
-    /* Esconde a sobreposição quando o vídeo começa */
+    /* Esconde a sobreposição ao dar play */
     .video-container.playing .video-overlay {
       opacity: 0;
       pointer-events: none;
+    }
+
+    .video-wrapper video {
+      display: block;
+      width: 100%;
+      height: auto;
     }
   </style>
 </head>
@@ -70,9 +99,7 @@
           <span>Aroeiras</span>
         </a>
       </h1>
-      
       <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
-      
       <nav class="menu-principal">
         <ul>
           <li><a href="index.html" class="active">Início</a></li>
@@ -88,29 +115,26 @@
     <div class="container">
       <h2 style="margin-top: 20px;">Tecendo Histórias, <br>Transformando Vidas.</h2>
       
-      <p class="destaque" style="text-align: center; max-width: 750px; margin: 0 auto 40px;">
+      <p class="destaque" style="text-align: center; max-width: 750px; margin: 0 auto 10px;">
         Negócio de impacto socioambiental em Uberlândia que transforma retalhos em moda sustentável através das mãos de mulheres incríveis.
       </p>
 
       <div class="video-container" id="videoContainer" onclick="playVideo()">
           <div class="video-overlay" id="videoOverlay">
-              <img src="img/logo.JPG" alt="Logo Aroeiras">
-              <div class="play-button">Conheça nossa história</div>
+              <img src="img/logo.JPG" alt="Logo Aroeiras" class="logo-sobre">
+              <div class="play-icon"></div>
+              <span>Conheça nossa história</span>
           </div>
           
           <div class="video-wrapper">
-              <video id="meuVideo" width="100%" height="auto" poster="img/foto com as mulheres.JPG">
+              <video id="meuVideo" poster="img/foto com as mulheres.JPG">
                   <source src="video/apresentacao.mp4" type="video/mp4">
                   Seu navegador não suporta a tag de vídeo.
               </video>
           </div>
       </div>
 
-      <div style="margin: 50px 0; text-align: center;">
-          <img src="img/foto com as mulheres.JPG" alt="Mulheres Aroeiras" style="border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin: 0 auto; max-height: 500px; width: 100%; object-fit: cover;">
-      </div>
-
-      <div class="botoes-compra">
+      <div class="botoes-compra" style="margin-top: 30px;">
           <a href="produtos.html" class="btn-shopee">Ver Coleção de Produtos</a>
           <a href="sobre.html" class="btn-whatsapp" style="background-color: #a65d47; border-color: #a65d47;">Nossa História Completa</a>
       </div>
@@ -129,14 +153,14 @@
       document.querySelector('.menu-principal').classList.toggle('active');
     });
 
-    // Função para dar play e esconder a logo
+    // Função para iniciar o vídeo
     function playVideo() {
       const video = document.getElementById('meuVideo');
       const container = document.getElementById('videoContainer');
       
       if (video.paused) {
         video.play();
-        video.controls = true; // Mostra os controlos após o play
+        video.controls = true;
         container.classList.add('playing');
       }
     }
@@ -144,4 +168,3 @@
 
 </body>
 </html>
-
