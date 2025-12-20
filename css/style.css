@@ -258,33 +258,70 @@ p {
   margin-bottom: 25px;
 }
 
-/* --- NÚMEROS --- */
+/* --- NÚMEROS (Fileira Única) --- */
 .numeros-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr); /* Força 4 colunas em uma fileira */
+  gap: 15px;
   margin-top: 20px;
-  padding: 40px 20px;
+  padding: 30px 15px;
   background-color: var(--color-light-brown);
   border-radius: 12px;
 }
 
 .numero-item {
   background-color: var(--color-beige);
-  padding: 30px 15px;
+  padding: 20px 10px;
   border-radius: 8px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 180px;
+  min-height: 150px;
 }
 
 .numero-item strong {
-  font-size: 2.5em;
+  font-size: 2em;
   color: var(--color-bright-red); 
   line-height: 1;
+}
+
+.numero-item span {
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+/* --- ODS (Fileira Única) --- */
+.ods-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Força 6 colunas em uma fileira */
+  gap: 15px;
+  margin-top: 40px;
+  text-align: center;
+  align-items: start;
+}
+
+.ods-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.ods-item img {
+  width: 100%;
+  max-width: 100px; /* Tamanho controlado para caber na fileira */
+  height: auto;
+  object-fit: contain;
+}
+
+.ods-item span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75em;
+  font-weight: 600;
+  color: var(--color-olive);
+  line-height: 1.2;
 }
 
 /* --- GRADES DE PRODUTOS E FOTOS --- */
@@ -364,43 +401,6 @@ p {
   white-space: nowrap;
 }
 
-/* --- ESTILOS DAS ODS (CORREÇÃO DE TAMANHOS) --- */
-.ods-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.ods-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
-}
-
-.ods-item img {
-  width: 140px !important; /* Tamanho fixo e igual para todos os ícones */
-  height: 140px !important;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.ods-item img:hover {
-  transform: translateY(-5px);
-}
-
-.ods-item span {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.95em;
-  font-weight: 600;
-  color: var(--color-olive);
-  line-height: 1.2;
-}
-
 /* --- FOOTER --- */
 .site-footer {
   background-color: var(--color-olive); 
@@ -430,21 +430,15 @@ p {
   .social-links a { width: 100%; text-align: center; }
   
   .logo-img { height: 50px; } 
-}
 
-@media (max-width: 600px) {
-    .ods-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-    .ods-item img {
-      width: 110px !important;
-      height: 110px !important;
-    }
+  /* Ajuste responsivo para fileiras em telas menores */
+  .numeros-grid { grid-template-columns: repeat(2, 1fr); }
+  .ods-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 480px) {
-    .numero-item strong { font-size: 2em; }
+    .numero-item strong { font-size: 1.8em; }
     .btn-video-play { font-size: 0.8em; padding: 10px 15px; }
     .site-header .logo a { font-size: 1.1em; }
+    .ods-grid { grid-template-columns: repeat(2, 1fr); }
 }
