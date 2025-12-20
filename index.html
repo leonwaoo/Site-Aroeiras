@@ -42,15 +42,15 @@
           <h2>Tecendo Histórias,<br>Transformando Realidades</h2>
           
           <p>
-            O Aroeiras é uma negócio de impacto socioambiental que nasceu do encontro entre a força de mulheres e o desejo de transformar a realidade por meio da costura.
+            O Aroeiras é um negócio de impacto socioambiental que nasceu do encontro entre a força de mulheres e o desejo de transformar a realidade por meio da costura.
           </p>
           
           <p style="margin-top: 20px; font-size: 1.1em; color: var(--color-olive); font-style: italic;">
-            Inspirada nas resistentes árvores do cerrado, a marca simboliza resiliência, renovação e propósito.
+            Unindo sustentabilidade, geração de renda e empoderamento feminino, o Aroeiras transforma resíduos têxteis da indústria da moda em bolsas e acessórios cheios de significado.
           </p>
 
           <div class="video-container" style="margin-top: 50px; position: relative;">
-            <video id="video-aroeiras" width="100%" muted poster="img/detalhs.JPG" style="border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
+            <video id="video-aroeiras" width="100%" muted poster="img/detalhes.JPG" style="border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
               <source src="video/apresentacao.mp4" type="video/mp4">
               Seu navegador não suporta vídeos.
             </video>
@@ -86,7 +86,7 @@
           btn.style.display = 'none'; 
           video.setAttribute("controls", "controls"); 
         }).catch(error => {
-          console.error("Erro ao reproduzir:", error);
+          console.error("Erro ao reproduzir vídeo:", error);
           video.muted = true;
           video.play();
         });
@@ -95,6 +95,7 @@
 
     const menuToggle = document.querySelector('.menu-toggle');
     const menuNav = document.querySelector('.menu-principal');
+
     if (menuToggle) {
       menuToggle.addEventListener('click', function() {
         menuNav.classList.toggle('active');
