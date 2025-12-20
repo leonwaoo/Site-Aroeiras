@@ -1,7 +1,7 @@
 /* --- IMPORTAÇÃO DAS FONTES --- */
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap');
 
-/* --- DEFINIÇÃO DE CORES (Paleta) --- */
+/* --- DEFINIÇÃO DE CORES (Paleta Aroeiras) --- */
 :root {
   --color-terracotta: #B05044; 
   --color-olive: #3E3F20;      
@@ -292,7 +292,7 @@ p {
   font-weight: 600;
 }
 
-/* --- ODS (Apenas imagens em fileira única) --- */
+/* --- ODS (Imagens em fileira única) --- */
 .ods-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -366,27 +366,6 @@ p {
 
 .grid-produtos img:hover { transform: scale(1.03); }
 
-/* --- VÍDEO --- */
-.video-container {
-    max-width: 900px;
-    margin: 50px auto;
-}
-
-.btn-video-play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(62, 63, 32, 0.9); 
-  color: #F0E4D8;
-  padding: 15px 25px;
-  border: 2px solid #F0E4D8;
-  border-radius: 8px;
-  font-family: 'Julius Sans One', sans-serif;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
 /* --- FOOTER --- */
 .site-footer {
   background-color: var(--color-olive); 
@@ -413,7 +392,6 @@ p {
   .menu-principal ul { flex-direction: column; align-items: center; }
   .menu-principal li { width: 100%; text-align: center; }
   .menu-principal li a { padding: 15px; border-radius: 0; }
-  .social-links a { width: 100%; text-align: center; }
   
   .logo-img { height: 50px; } 
 
@@ -423,7 +401,6 @@ p {
 
 @media (max-width: 480px) {
     .numero-item strong { font-size: 1.8em; }
-    .btn-video-play { font-size: 0.8em; padding: 10px 15px; }
     .site-header .logo a { font-size: 1.1em; }
     .ods-grid { grid-template-columns: repeat(2, 1fr); }
 }
