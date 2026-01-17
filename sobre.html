@@ -7,9 +7,38 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Estilos específicos para o efeito de manuscrito nos depoimentos */
+    .depoimento-item {
+      background-color: #fdfbf7; /* Tom leve de papel */
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.03);
+      border-left: 3px solid var(--color-beige, #d2b48c);
+    }
+
+    .depoimento-manuscrito {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.4rem;
+      line-height: 1.4;
+      color: #4a4a4a;
+      margin-bottom: 15px !important;
+    }
+
+    .autor-relato {
+      font-family: 'Poppins', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.85rem;
+      display: block;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
 
@@ -46,65 +75,43 @@
             Cada produto carrega histórias reais de superação, aprendizado e dignidade de mulheres que tecem o próprio destino.
           </p>
 
-          <div class="depoimentos-container" style="margin-top: 50px; border-top: 1px solid var(--color-beige); padding-top: 30px;">
+          <div class="depoimentos-container" style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px;">
               
               <div class="depoimento-item">
-                  <p>"Antes eu tinha dificuldade sim, até para me manter, comprar um café era um sufoco. Com o Aroeiras, já aumentou mais a minha renda. Consegui pagar as contas e já dormi mais sossegada. É uma mudança de vida que a gente sente no dia a dia."</p>
-                  <strong>—— Dona Lenir</strong>
+                  <p class="depoimento-manuscrito">"Antes eu tinha dificuldade sim, até para me manter, comprar um café era um sufoco. Com o Aroeiras, já aumentou mais a minha renda. Consegui pagar as contas e já dormi mais sossegada. É uma mudança de vida que a gente sente no dia a dia."</p>
+                  <strong class="autor-relato">—— Dona Lenir</strong>
               </div>
 
               <div class="depoimento-item">
-                  <p>"O Aroeiras tem sido para mim uma porta que foi aberta, uma oportunidade de descoberta de uma nova profissão. Consegui fabricar uma bolsa! Foi até um sonho que deu certo."</p>
-                  <strong>—— Dona Nely</strong>
+                  <p class="depoimento-manuscrito">"O Aroeiras tem sido para mim uma porta que foi aberta, uma oportunidade de descoberta de uma nova profissão. Consegui fabricar uma bolsa! Foi até um sonho que deu certo."</p>
+                  <strong class="autor-relato">—— Dona Nely</strong>
               </div>
 
               <div class="depoimento-item">
-                  <p>"O Aroeiras significa independência financeira e aprendizado constante. Me sinto feliz com pessoas amigas e respeitosas que me valorizam. Além da renda, é algo que me faz pensar em viver só de costura."</p>
-                  <strong>—— Dona Nina</strong>
+                  <p class="depoimento-manuscrito">"O Aroeiras significa independência financeira e aprendizado constante. Me sinto feliz com pessoas amigas e respeitosas que me valorizam. Além da renda, é algo que me faz pensar em viver só de costura."</p>
+                  <strong class="autor-relato">—— Dona Nina</strong>
+              </div>
+
+              <div class="depoimento-item">
+                  <p class="depoimento-manuscrito">"Olha, da Aroeiras eu não tenho do que reclamar. Eu quero é aprender mais, mais coisas, entendeu? Não tenho que reclamar da Aroeiras, só que eu tenho que aprender mais. Eu gosto de estar indo, gosto de estar frequentando e gosto de estar junto com vocês."</p>
+                  <strong class="autor-relato">—— Dona Maria</strong>
               </div>
           </div>
       </div>
 
-      <h2 style="margin-top: 60px;">O Aroeiras em Números</h2>
-      <div class="numeros-grid">
-          <div class="numero-item">
-              <strong>+3000</strong>
-              <span>PRODUTOS VENDIDOS</span>
-          </div>
-          <div class="numero-item">
-              <strong>+3</strong>
-              <span>TONELADAS DE TECIDOS RECICLADOS</span>
-          </div>
-          <div class="numero-item">
-              <strong>+25</strong>
-              <span>MULHERES IMPACTADAS</span>
-          </div>
-          <div class="numero-item">
-              <strong>+60M</strong>
-              <span>LITROS DE ÁGUA POUPADOS</span>
-          </div>
+      <h2 style="margin-top: 60px;">Nosso Impacto</h2>
+      <div class="banner-impacto" style="margin-bottom: 40px;">
+          <img src="img/banner.JPG" alt="Banner Impacto Aroeiras" style="width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
       </div>
 
       <h2 style="margin-top: 60px;">Nossos Compromissos (ODS)</h2>
       <div class="ods-grid">
-          <div class="ods-item">
-              <img src="img/01_1.png" alt="ODS 1 - Erradicação da Pobreza">
-          </div>
-          <div class="ods-item">
-              <img src="img/05_0.png" alt="ODS 5 - Igualdade de Gênero">
-          </div>
-          <div class="ods-item">
-              <img src="img/08_0.png" alt="ODS 8 - Trabalho Decente">
-          </div>
-          <div class="ods-item">
-              <img src="img/10_0.png" alt="ODS 10 - Redução das Desigualdades">
-          </div>
-          <div class="ods-item">
-              <img src="img/12_0.png" alt="ODS 12 - Consumo Responsável">
-          </div>
-          <div class="ods-item">
-              <img src="img/14_0.png" alt="ODS 14 - Vida na Água">
-          </div>
+          <div class="ods-item"><img src="img/01_1.png" alt="ODS 1"></div>
+          <div class="ods-item"><img src="img/05_0.png" alt="ODS 5"></div>
+          <div class="ods-item"><img src="img/08_0.png" alt="ODS 8"></div>
+          <div class="ods-item"><img src="img/10_0.png" alt="ODS 10"></div>
+          <div class="ods-item"><img src="img/12_0.png" alt="ODS 12"></div>
+          <div class="ods-item"><img src="img/14_0.png" alt="ODS 14"></div>
       </div>
 
     </div>
