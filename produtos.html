@@ -92,7 +92,17 @@
             <div class="img-zoom-container"><img src="img/mulheres costurando.JPG" alt="Mulheres costurando" class="img-zoomable"></div>
             <div class="img-zoom-container"><img src="img/foto com as mulheres.JPG" alt="Equipe Aroeiras" class="img-zoomable"></div>
             <div class="img-zoom-container"><img src="img/oficina de costura.JPG" alt="Oficina de costura" class="img-zoomable"></div>
-            <div class="img-zoom-container"><img src="img/foto praiana.JPG" alt="Uso das ecobags em ambiente externo" class="img-zoomable"></div>
+            <div class="img-zoom-container"><img src="img/foto praiana.JPG" alt="Uso das ecobags" class="img-zoomable"></div>
+            
+            <div class="img-zoom-container"><img src="img/fotos aroeiras (1).jpeg" alt="Modelo com Ecobag" class="img-zoomable"></div>
+            <div class="img-zoom-container"><img src="img/fotos aroeiras (2).jpeg" alt="Costureira Aroeiras" class="img-zoomable"></div>
+            <div class="img-zoom-container"><img src="img/fotos aroeiras (3).jpeg" alt="Processo de Costura" class="img-zoomable"></div>
+            <div class="img-zoom-container"><img src="img/fotos aroeiras (4).jpeg" alt="Variedade de Necessaires" class="img-zoomable"></div>
+            <div class="img-zoom-container"><img src="img/fotos aroeiras (5).jpeg" alt="Modelos ao Entardecer" class="img-zoomable"></div>
+            <div class="img-zoom-container"><img src="img/fotos aroeiras (6).jpeg" alt="Ecobag Floral" class="img-zoomable"></div>
+            <div class="img-zoom-container"><img src="img/fotos aroeiras (7).jpeg" alt="Modelo com Shoulder Bag" class="img-zoomable"></div>
+            <div class="img-zoom-container"><img src="img/fotos aroeiras (8).jpeg" alt="Detalhe de Estampa e Etiqueta" class="img-zoomable"></div>
+            
             <div class="img-zoom-container"><img src="img/detalhes.JPG" alt="Detalhes do acabamento" class="img-zoomable"></div>
             <div class="img-zoom-container"><img src="img/necessarie2.JPG" alt="Outras variações de necessaire" class="img-zoomable"></div>
         </div>
@@ -118,7 +128,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container"><p>© 2025 Aroeiras. Todos os direitos reservados.</p></div>
+    <div class="container"><p>© 2026 Aroeiras. Todos os direitos reservados.</p></div>
   </footer>
 
   <script>
@@ -127,7 +137,7 @@
       document.querySelector('.menu-principal').classList.toggle('active');
     });
 
-    // Função de Zoom suave seguindo o cursor
+    // Função de Zoom suave ajustada (Scale 1.4)
     const zoomContainers = document.querySelectorAll('.img-zoom-container');
 
     zoomContainers.forEach(container => {
@@ -139,7 +149,7 @@
             const y = ((e.pageY - top - window.scrollY) / height) * 100;
 
             img.style.transformOrigin = `${x}% ${y}%`;
-            img.style.transform = "scale(2)";
+            img.style.transform = "scale(1.4)"; // Zoom reduzido para melhor visualização
         });
 
         container.addEventListener('mouseleave', () => {
