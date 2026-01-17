@@ -13,10 +13,9 @@
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
-    /* Estilos específicos para a melhoria do vídeo e botões com as cores de contacto */
     :root {
-      --color-primary-action: #3E3F20; /* Cor Olive extraída do CSS de contacto/style */
-      --color-hover-action: #B05044;   /* Cor Terracotta para o efeito hover */
+      --color-primary-action: #3E3F20; 
+      --color-hover-action: #B05044;   
     }
 
     .video-container {
@@ -44,20 +43,11 @@
       z-index: 2;
     }
 
-    .video-container:hover .video-overlay {
-      background: rgba(0, 0, 0, 0.3);
-    }
-
     .play-icon {
       font-size: 70px;
       color: #fff;
       margin-bottom: 15px;
       transition: transform 0.3s ease;
-      filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
-    }
-
-    .video-container:hover .play-icon {
-      transform: scale(1.15);
     }
 
     .btn-video-text {
@@ -69,32 +59,35 @@
       font-size: 1.1em;
     }
 
-    /* Botões com a cor bonita de 'contatos' */
+    /* Ajuste para os 4 botões ficarem na mesma linha */
     .hero-buttons {
       margin-top: 45px;
       display: flex;
       justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+      gap: 10px; /* Reduzi o espaço para caberem todos */
+      flex-wrap: nowrap; /* Impede que os botões pulem para a linha de baixo */
+      overflow-x: auto; /* Adiciona scroll se a tela for muito pequena */
+      padding-bottom: 10px;
     }
 
     .btn-aroeiras {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      padding: 16px 35px;
+      gap: 8px;
+      padding: 12px 20px; /* Padding reduzido para a linha única */
       border-radius: 50px;
       text-decoration: none;
       font-family: 'Julius Sans One', sans-serif;
       font-weight: 600;
-      font-size: 0.95em;
+      font-size: 0.85em; /* Fonte levemente menor */
       letter-spacing: 1px;
       transition: all 0.3s ease;
       background-color: var(--color-primary-action);
-      color: #F0E4D8; /* Cor Beige de texto */
+      color: #F0E4D8;
       border: 2px solid var(--color-primary-action);
-      min-width: 220px;
+      white-space: nowrap; /* Impede o texto de quebrar dentro do botão */
+      min-width: fit-content;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
@@ -102,10 +95,8 @@
       background-color: transparent;
       color: var(--color-primary-action);
       transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
 
-    /* Ajuste para botões de destaque (Shopee e LinkedIn) */
     .btn-shopee-highlight {
         background-color: var(--color-hover-action);
         border-color: var(--color-hover-action);
@@ -115,9 +106,14 @@
         color: var(--color-hover-action);
     }
 
-    @media (max-width: 600px) {
-        .btn-aroeiras { width: 100%; }
-        .hero-buttons { padding: 0 10px; }
+    /* No celular, eles podem ocupar a largura total em lista se preferir, 
+       mas aqui mantive a lógica de scroll ou redução para ficarem juntos */
+    @media (max-width: 900px) {
+        .hero-buttons { 
+            justify-content: flex-start; 
+            padding-left: 10px;
+            padding-right: 10px;
+        }
     }
   </style>
 </head>
@@ -172,13 +168,13 @@
 
           <div class="hero-buttons">
             <a href="https://wa.me/553497337768" target="_blank" class="btn-aroeiras">
-                <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+                <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
             <a href="https://shopee.com.br/aroeiras" target="_blank" class="btn-aroeiras btn-shopee-highlight">
-                <i class="fas fa-shopping-bag"></i> Loja na Shopee
+                <i class="fas fa-shopping-bag"></i> Shopee
             </a>
             <a href="https://www.instagram.com/aroeiras_/" target="_blank" class="btn-aroeiras">
-                <i class="fab fa-instagram"></i> Ver Instagram
+                <i class="fab fa-instagram"></i> Instagram
             </a>
             <a href="https://www.linkedin.com/company/aroeiras-moda-sustent%C3%A1vel/" target="_blank" class="btn-aroeiras btn-shopee-highlight">
                 <i class="fab fa-linkedin"></i> LinkedIn
@@ -198,7 +194,6 @@
     function playVideo() {
       const video = document.getElementById('video-aroeiras');
       const overlay = document.getElementById('overlay-video');
-
       if (video) {
         video.muted = false; 
         video.play().then(() => {
@@ -206,22 +201,18 @@
           setTimeout(() => { overlay.style.display = 'none'; }, 400);
           video.setAttribute("controls", "controls"); 
         }).catch(error => {
-          console.error("Erro ao reproduzir vídeo:", error);
           video.muted = true;
           video.play();
         });
       }
     }
-
     const menuToggle = document.querySelector('.menu-toggle');
     const menuNav = document.querySelector('.menu-principal');
-
     if (menuToggle) {
       menuToggle.addEventListener('click', function() {
         menuNav.classList.toggle('active');
       });
     }
   </script>
-
 </body>
 </html>
