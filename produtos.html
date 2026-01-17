@@ -9,45 +9,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* Ajustes para manter 3 colunas e melhorar o tamanho das fotos */
+    /* Layout da Galeria Otimizado */
     .grid-produtos, .galeria-fotos {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* Força 3 colunas */
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr); /* Mantém 3 colunas */
+      gap: 25px; /* Espaçamento mais elegante entre as fotos */
       margin: 40px 0;
     }
 
+    /* Estilização dos Containers de Imagem */
     .img-zoom-container {
       width: 100%;
-      height: 350px; /* Altura fixa para manter o padrão na grade */
+      height: 400px; /* Altura aumentada para melhor visualização vertical */
       overflow: hidden;
-      border-radius: 10px;
-      background-color: #f0f0f0;
+      border-radius: 12px;
+      background-color: #f7f7f7;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra suave para profundidade */
     }
 
     .img-zoom-container img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Garante que a foto preencha o espaço sem distorcer */
-      transition: transform 0.4s ease-in-out; /* Transição suave para o aumento */
+      object-fit: cover; 
+      transition: transform 0.5s ease; /* Aumento suave e natural */
     }
 
-    /* Efeito de aumento simples ao passar o mouse */
+    /* Efeito de aumento sutil ao passar o mouse */
     .img-zoom-container:hover img {
-      transform: scale(1.1); /* Apenas um leve aumento centralizado */
+      transform: scale(1.06); /* Aumento discreto para não perder enquadramento */
     }
 
-    /* Responsividade para telas menores */
-    @media (max-width: 900px) {
-      .grid-produtos, .galeria-fotos {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    /* Responsividade */
+    @media (max-width: 1024px) {
+      .img-zoom-container { height: 350px; }
     }
-    @media (max-width: 600px) {
-      .grid-produtos, .galeria-fotos {
-        grid-template-columns: 1fr;
-      }
-      .img-zoom-container { height: 300px; }
+    @media (max-width: 850px) {
+      .grid-produtos, .galeria-fotos { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .grid-produtos, .galeria-fotos { grid-template-columns: 1fr; }
+      .img-zoom-container { height: 320px; }
     }
   </style>
 </head>
@@ -136,6 +137,7 @@
             <div class="img-zoom-container"><img src="img/fotos aroeiras (6).jpeg" alt="Ecobag Floral"></div>
             <div class="img-zoom-container"><img src="img/fotos aroeiras (7).jpeg" alt="Modelo com Shoulder Bag"></div>
             <div class="img-zoom-container"><img src="img/fotos aroeiras (8).jpeg" alt="Detalhe de Estampa"></div>
+            <div class="img-zoom-container"><img src="img/fotos aroeiras (9).jpeg" alt="Acessórios Aroeiras"></div>
             <div class="img-zoom-container"><img src="img/detalhes.JPG" alt="Detalhes do acabamento"></div>
             <div class="img-zoom-container"><img src="img/necessarie2.JPG" alt="Variações de necessaire"></div>
         </div>
