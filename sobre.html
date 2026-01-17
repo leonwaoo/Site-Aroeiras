@@ -7,14 +7,14 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
-    /* Estilos específicos para o efeito de manuscrito nos depoimentos */
+    /* Estilos para destaque dos depoimentos em itálico */
     .depoimento-item {
-      background-color: #fdfbf7; /* Tom leve de papel */
+      background-color: #fdfbf7; 
       padding: 25px;
       border-radius: 10px;
       margin-bottom: 25px;
@@ -22,12 +22,14 @@
       border-left: 3px solid var(--color-beige, #d2b48c);
     }
 
-    .depoimento-manuscrito {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.4rem;
-      line-height: 1.4;
+    .depoimento-texto {
+      font-family: 'Poppins', sans-serif;
+      font-style: italic; /* Aplica o itálico para destaque */
+      font-size: 1.1rem;
+      line-height: 1.6;
       color: #4a4a4a;
       margin-bottom: 15px !important;
+      text-align: center;
     }
 
     .autor-relato {
@@ -37,6 +39,7 @@
       font-size: 0.85rem;
       display: block;
       color: #888;
+      text-align: center;
     }
   </style>
 </head>
@@ -78,22 +81,22 @@
           <div class="depoimentos-container" style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px;">
               
               <div class="depoimento-item">
-                  <p class="depoimento-manuscrito">"Antes eu tinha dificuldade sim, até para me manter, comprar um café era um sufoco. Com o Aroeiras, já aumentou mais a minha renda. Consegui pagar as contas e já dormi mais sossegada. É uma mudança de vida que a gente sente no dia a dia."</p>
+                  <p class="depoimento-texto">"Antes eu tinha dificuldade sim, até para me manter, comprar um café era um sufoco. Com o Aroeiras, já aumentou mais a minha renda. Consegui pagar as contas e já dormi mais sossegada. É uma mudança de vida que a gente sente no dia a dia."</p>
                   <strong class="autor-relato">—— Dona Lenir</strong>
               </div>
 
               <div class="depoimento-item">
-                  <p class="depoimento-manuscrito">"O Aroeiras tem sido para mim uma porta que foi aberta, uma oportunidade de descoberta de uma nova profissão. Consegui fabricar uma bolsa! Foi até um sonho que deu certo."</p>
+                  <p class="depoimento-texto">"O Aroeiras tem sido para mim uma porta que foi aberta, uma oportunidade de descoberta de uma nova profissão. Consegui fabricar uma bolsa! Foi até um sonho que deu certo."</p>
                   <strong class="autor-relato">—— Dona Nely</strong>
               </div>
 
               <div class="depoimento-item">
-                  <p class="depoimento-manuscrito">"O Aroeiras significa independência financeira e aprendizado constante. Me sinto feliz com pessoas amigas e respeitosas que me valorizam. Além da renda, é algo que me faz pensar em viver só de costura."</p>
+                  <p class="depoimento-texto">"O Aroeiras significa independência financeira e aprendizado constante. Me sinto feliz com pessoas amigas e respeitosas que me valorizam. Além da renda, é algo que me faz pensar em viver só de costura."</p>
                   <strong class="autor-relato">—— Dona Nina</strong>
               </div>
 
               <div class="depoimento-item">
-                  <p class="depoimento-manuscrito">"Olha, da Aroeiras eu não tenho do que reclamar. Eu quero é aprender mais, mais coisas, entendeu? Não tenho que reclamar da Aroeiras, só que eu tenho que aprender mais. Eu gosto de estar indo, gosto de estar frequentando e gosto de estar junto com vocês."</p>
+                  <p class="depoimento-texto">"Olha, da Aroeiras eu não tenho do que reclamar. Eu quero é aprender mais, mais coisas, entendeu? Não tenho que reclamar da Aroeiras, só que eu tenho que aprender mais. Eu gosto de estar indo, gosto de estar frequentando e gosto de estar junto com vocês."</p>
                   <strong class="autor-relato">—— Dona Maria</strong>
               </div>
           </div>
@@ -119,7 +122,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2025 Aroeiras. Todos os direitos reservados.</p>
+      <p>© 2026 Aroeiras. Todos os direitos reservados.</p>
     </div>
   </footer>
 
