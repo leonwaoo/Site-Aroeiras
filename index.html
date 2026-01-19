@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+,<!DOCTYPE html>
 
 <html lang="pt-BR">
 
@@ -120,7 +120,7 @@
 
 
 
-    /* Ajuste para os 4 botões ficarem na mesma linha */
+  
 
     .hero-buttons {
 
@@ -130,11 +130,10 @@
 
       justify-content: center;
 
-      gap: 10px; /* Reduzi o espaço para caberem todos */
+      gap: 10px; 
+      flex-wrap: nowrap; 
 
-      flex-wrap: nowrap; /* Impede que os botões pulem para a linha de baixo */
-
-      overflow-x: auto; /* Adiciona scroll se a tela for muito pequena */
+      overflow-x: auto; 
 
       padding-bottom: 10px;
 
@@ -152,7 +151,7 @@
 
       gap: 8px;
 
-      padding: 12px 20px; /* Padding reduzido para a linha única */
+      padding: 12px 20px; 
 
       border-radius: 50px;
 
@@ -162,8 +161,7 @@
 
       font-weight: 600;
 
-      font-size: 0.85em; /* Fonte levemente menor */
-
+      font-size: 0.85em; 
       letter-spacing: 1px;
 
       transition: all 0.3s ease;
@@ -174,7 +172,7 @@
 
       border: 2px solid var(--color-primary-action);
 
-      white-space: nowrap; /* Impede o texto de quebrar dentro do botão */
+      white-space: nowrap; 
 
       min-width: fit-content;
 
@@ -214,9 +212,7 @@
 
 
 
-    /* No celular, eles podem ocupar a largura total em lista se preferir, 
-
-       mas aqui mantive a lógica de scroll ou redução para ficarem juntos */
+  
 
     @media (max-width: 900px) {
 
