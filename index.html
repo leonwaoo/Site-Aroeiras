@@ -1,148 +1,435 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
+
   <meta charset="utf-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Início - Aroeiras</title>
+
   
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
   
+
   <link rel="stylesheet" href="css/style.css" />
 
+
+
   <style>
+
     :root {
+
       --color-primary-action: #3E3F20; 
+
       --color-hover-action: #B05044;   
+
     }
+
+
 
     .video-container {
+
       position: relative;
+
       margin-top: 50px;
+
       cursor: pointer;
+
       border-radius: 15px;
+
       overflow: hidden;
+
       box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+
       background: #000;
+
     }
+
+
 
     .video-overlay {
+
       position: absolute;
+
       top: 0;
+
       left: 0;
+
       width: 100%;
+
       height: 100%;
+
       background: rgba(0, 0, 0, 0.45);
+
       display: flex;
+
       flex-direction: column;
+
       justify-content: center;
+
       align-items: center;
+
       transition: all 0.4s ease;
+
       z-index: 2;
+
     }
+
+
 
     .play-icon {
+
       font-size: 70px;
+
       color: #fff;
+
       margin-bottom: 15px;
+
       transition: transform 0.3s ease;
+
     }
+
+
 
     .btn-video-text {
+
       font-family: 'Julius Sans One', sans-serif;
+
       color: #fff;
+
       letter-spacing: 3px;
+
       font-weight: bold;
+
       text-transform: uppercase;
+
       font-size: 1.1em;
+
     }
+
+
+
+    /* Ajuste para os 4 botões ficarem na mesma linha */
 
     .hero-buttons {
+
       margin-top: 45px;
+
       display: flex;
+
       justify-content: center;
-      gap: 10px;
-      flex-wrap: nowrap;
-      overflow-x: auto;
+
+      gap: 10px; /* Reduzi o espaço para caberem todos */
+
+      flex-wrap: nowrap; /* Impede que os botões pulem para a linha de baixo */
+
+      overflow-x: auto; /* Adiciona scroll se a tela for muito pequena */
+
       padding-bottom: 10px;
+
     }
+
+
 
     .btn-aroeiras {
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       gap: 8px;
-      padding: 12px 20px;
+
+      padding: 12px 20px; /* Padding reduzido para a linha única */
+
       border-radius: 50px;
+
       text-decoration: none;
+
       font-family: 'Julius Sans One', sans-serif;
+
       font-weight: 600;
-      font-size: 0.85em;
+
+      font-size: 0.85em; /* Fonte levemente menor */
+
       letter-spacing: 1px;
+
       transition: all 0.3s ease;
+
       background-color: var(--color-primary-action);
+
       color: #F0E4D8;
+
       border: 2px solid var(--color-primary-action);
-      white-space: nowrap;
+
+      white-space: nowrap; /* Impede o texto de quebrar dentro do botão */
+
       min-width: fit-content;
+
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
     }
+
+
 
     .btn-aroeiras:hover {
+
       background-color: transparent;
+
       color: var(--color-primary-action);
+
       transform: translateY(-3px);
+
     }
+
+
 
     .btn-shopee-highlight {
+
         background-color: var(--color-hover-action);
+
         border-color: var(--color-hover-action);
+
     }
+
+
 
     .btn-shopee-highlight:hover {
+
         color: var(--color-hover-action);
+
     }
+
+
+
+    /* No celular, eles podem ocupar a largura total em lista se preferir, 
+
+       mas aqui mantive a lógica de scroll ou redução para ficarem juntos */
 
     @media (max-width: 900px) {
+
         .hero-buttons { 
+
             justify-content: flex-start; 
+
             padding-left: 10px;
+
             padding-right: 10px;
+
         }
+
     }
+
   </style>
+
 </head>
+
 <body class="home-page"> 
 
+
+
   <header class="site-header">
+
     <div class="container">
+
       <h1 class="logo">
+
         <a href="index.html">
+
           <img src="img/logo.JPG" alt="Logo Aroeiras" class="logo-img">
+
           <span>Aroeiras</span>
+
         </a>
+
       </h1>
+
       
+
       <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+
       
+
       <nav class="menu-principal">
+
         <ul>
+
           <li><a href="index.html" class="active">Início</a></li>
+
           <li><a href="produtos.html">Produtos</a></li>
+
           <li><a href="sobre.html">Sobre Nós</a></li>
+
           <li><a href="contato.html">Contato</a></li>
+
         </ul>
+
       </nav>
+
     </div>
+
   </header>
 
+
+
   <main class="main-content">
+
     <div class="container">
+
       <div class="home-hero" style="text-align: center;">
+
           
+
           <h2>Tecendo Histórias,<br>Transformando Realidades</h2>
+
           
+
           <p>
-            O Aroeiras é um negócio de impacto socioambiental que nasceu do encontro entre a força de mulheres e o desejo
+
+            O Aroeiras é um negócio de impacto socioambiental que nasceu do encontro entre a força de mulheres e o desejo de transformar a realidade por meio da costura.
+
+          </p>
+
+          
+
+          <p style="margin-top: 20px; font-size: 1.1em; color: var(--color-olive); font-style: italic;">
+
+            Unindo sustentabilidade, geração de renda e empoderamento feminino, o Aroeiras transforma resíduos têxteis da indústria da moda em peças cheias de significado.
+
+          </p>
+
+
+
+          <div class="video-container" onclick="playVideo()">
+
+            <div class="video-overlay" id="overlay-video">
+
+                <i class="fas fa-play-circle play-icon"></i>
+
+                <span class="btn-video-text">Conheça a Nossa História</span>
+
+            </div>
+
+            <video id="video-aroeiras" width="100%" muted poster="img/oficina de costura.JPG" style="display: block; border-radius: 15px;">
+
+              <source src="video/apresentacao.mp4" type="video/mp4">
+
+              Seu navegador não suporta vídeos.
+
+            </video>
+
+          </div>
+
+
+
+          <div class="hero-buttons">
+
+            <a href="https://wa.me/553497337768" target="_blank" class="btn-aroeiras">
+
+                <i class="fab fa-whatsapp"></i> WhatsApp
+
+            </a>
+
+            <a href="https://shopee.com.br/aroeiras" target="_blank" class="btn-aroeiras btn-shopee-highlight">
+
+                <i class="fas fa-shopping-bag"></i> Shopee
+
+            </a>
+
+            <a href="https://www.instagram.com/aroeiras_/" target="_blank" class="btn-aroeiras">
+
+                <i class="fab fa-instagram"></i> Instagram
+
+            </a>
+
+            <a href="https://www.linkedin.com/company/aroeiras-moda-sustent%C3%A1vel/" target="_blank" class="btn-aroeiras btn-shopee-highlight">
+
+                <i class="fab fa-linkedin"></i> LinkedIn
+
+            </a>
+
+          </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+  <footer class="site-footer">
+
+    <div class="container">
+
+      <p>© 2026 Aroeiras. Todos os direitos reservados.</p>
+
+    </div>
+
+  </footer>
+
+
+
+  <script>
+
+    function playVideo() {
+
+      const video = document.getElementById('video-aroeiras');
+
+      const overlay = document.getElementById('overlay-video');
+
+      if (video) {
+
+        video.muted = false; 
+
+        video.play().then(() => {
+
+          overlay.style.opacity = '0'; 
+
+          setTimeout(() => { overlay.style.display = 'none'; }, 400);
+
+          video.setAttribute("controls", "controls"); 
+
+        }).catch(error => {
+
+          video.muted = true;
+
+          video.play();
+
+        });
+
+      }
+
+    }
+
+    const menuToggle = document.querySelector('.menu-toggle');
+
+    const menuNav = document.querySelector('.menu-principal');
+
+    if (menuToggle) {
+
+      menuToggle.addEventListener('click', function() {
+
+        menuNav.classList.toggle('active');
+
+      });
+
+    }
+
+  </script>
+
+</body>
+
+</html>
