@@ -9,13 +9,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=20260619" />
 </head>
 <body>
 
   <header class="site-header">
     <div class="container">
-      <h1 class="logo"><a href="index.html">Aroeiras</a></h1>
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="img/logo.JPG" alt="Logo Aroeiras" class="logo-img">
+          <span>Aroeiras</span>
+        </a>
+      </h1>
       
       <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
       
@@ -23,7 +28,6 @@
         <ul>
           <li><a href="index.html">Início</a></li>
           <li><a href="produtos.html">Produtos</a></li>
-          <li><a href="galeria.html" class="active">Galeria</a></li>
           <li><a href="sobre.html">Sobre Nós</a></li>
           <li><a href="contato.html">Contato</a></li>
         </ul>
@@ -34,22 +38,26 @@
   <main class="main-content">
     <div class="container">
       <h2>Nossa Galeria</h2>
-      <p style="max-width: 600px; margin: 0 auto 30px;">Um pouco do nosso trabalho, nossas mãos e nossas histórias de impacto.</p>
+      <p class="page-intro">Um pouco do nosso trabalho, nossas mãos e nossas histórias de impacto.</p>
       
-      <div class="galeria-fotos" style="/* Adicione aqui o seu CSS para a grade de fotos */">
-        <p style="font-family: 'Poppins', sans-serif;">(AS FOTOS SERÃO COLOCADAS AQUI - Use um layout de grade ou carrossel com o CSS)</p>
+      <div class="galeria-fotos">
+        <div class="img-zoom-container"><img src="img/mulheres costurando.JPG" alt="Mulheres costurando" loading="lazy"></div>
+        <div class="img-zoom-container"><img src="img/foto com as mulheres.JPG" alt="Equipe Aroeiras" loading="lazy"></div>
+        <div class="img-zoom-container"><img src="img/oficina de costura.JPG" alt="Oficina de costura" loading="lazy"></div>
+        <div class="img-zoom-container"><img src="img/foto praiana.JPG" alt="Uso das ecobags" loading="lazy"></div>
+        <div class="img-zoom-container"><img src="img/fotos aroeiras (1).jpeg" alt="Modelo com ecobag" loading="lazy"></div>
+        <div class="img-zoom-container"><img src="img/fotos aroeiras (7).jpeg" alt="Modelo com shoulder bag" loading="lazy"></div>
       </div>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2025 Aroeiras. Todos os direitos reservados.</p>
+      <p>© 2026 Aroeiras. Todos os direitos reservados.</p>
     </div>
   </footer>
 
   <script>
-    // Funcionalidade do Menu Sanduíche
     document.querySelector('.menu-toggle').addEventListener('click', () => {
       document.querySelector('.menu-principal').classList.toggle('active');
     });
